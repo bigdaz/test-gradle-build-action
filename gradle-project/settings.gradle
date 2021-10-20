@@ -13,6 +13,7 @@ gradleEnterprise {
     }
 }
 
+// This sets the root project name
 rootProject.name = 'test-gradle-command-action'
 include('lib')
 
