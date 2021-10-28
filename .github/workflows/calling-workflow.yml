@@ -7,4 +7,4 @@ on:
 
 jobs:
   the-calling-job:
-    uses: ./called-workflow.yml@${{github.sha}}
+    uses: .github/workflows/called-workflow.yml@${{github.sha}}
