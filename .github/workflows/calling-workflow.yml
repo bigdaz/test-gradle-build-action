@@ -7,4 +7,4 @@ on:
 
 jobs:
   the-calling-job:
-    uses: bigdaz/test-gradle-command-action/.github/workflows/called-workflow.yml@${{github.sha}}
+    uses: bigdaz/test-gradle-command-action/.github/workflows/called-workflow.yml@testing
