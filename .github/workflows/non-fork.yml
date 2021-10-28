@@ -1,4 +1,3 @@
-# Change to workflow.
 name: non-fork
 on:
   push:
