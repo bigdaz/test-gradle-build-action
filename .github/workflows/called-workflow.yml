@@ -1,0 +1,11 @@
+name: called-workflow
+
+on: workflow_call
+
+jobs:
+  the-called-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add a notice
+        run: echo "::notice ::In called workflow"
+

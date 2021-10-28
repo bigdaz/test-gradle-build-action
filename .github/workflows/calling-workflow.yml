@@ -1,0 +1,10 @@
+name: calling-workflow
+
+on:
+  push:
+    branches:
+      - testing
+
+jobs:
+  the-calling-job:
+    uses: ./called-workflow.yml
