@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: generate-annotation
-      run: echo "::warning file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+      run: echo '::warning title=DAZ WARNING,file=README.md,line=1,endLine=2::Missing semicolon'
       
   # checks-action:
   #   runs-on: ubuntu-latest
