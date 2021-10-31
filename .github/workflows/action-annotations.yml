@@ -11,5 +11,10 @@ jobs:
     steps:
     - name: Echo warning
       run: echo "::warning::Try some **markdown** _foo_"
+    - uses: LouisBrunner/checks-action@v1.1.1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        name: Test XYZ
+        conclusion: success
 
   
