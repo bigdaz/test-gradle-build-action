@@ -21,11 +21,11 @@ jobs:
           BUILD_COMMIT: ${{ github.sha }}
         run: |
           curl \
-          -X PATCH \
+          -X POST \
           -H "Authorization: Bearer $GITHUB_TOKEN" \
           -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/bigdaz/test-gradle-command-action/check-runs/4061471454 \
-          -d '{"name":"XXXX"}'
+          https://api.github.com/repos/bigdaz/test-gradle-command-action/check-runs \
+          -d '{"name":"XXXX", "head_sha": "${{github.sha}}","status":"completed","conclusion":"neutral","output":{"title":"Custom title","summary":"Custom summary","annotations":[{"path":"README.md","start_line":"1","end_line":"2","annotation_level":"warning","message":"FOO"}]}}'
 
   # checks-action:
   #   runs-on: ubuntu-latest
