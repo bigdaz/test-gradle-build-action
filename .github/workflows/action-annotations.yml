@@ -26,10 +26,10 @@ jobs:
     - uses: LouisBrunner/checks-action@v1.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        name: Test with details url and annotations
+        name: Test with annotation
         conclusion: neutral
-        details_url: https://ge.gradle.org
         output: |
           {"summary":"[Build Scan URL: https://ge.gradle.org](https://ge.gradle.org)", "text_description":"Here is a bunch of text\nAnother line\nLine *with* _markdown_"}
         annotations: |
-          [{"path":"README.md","annotation_level":"warning","title":"Spell Checker","message":"Check your spelling for 'banaas'.","raw_details":"Do you mean 'bananas' or 'banana'?","start_line":1,"end_line":2}]
+          [{"path":"README.md","start_line":"1","end_line":"2","annotation_level":"warning","title":"Custom annotation","message":"This is my custom annotation"}]
+
