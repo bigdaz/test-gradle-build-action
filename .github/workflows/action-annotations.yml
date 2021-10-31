@@ -22,4 +22,4 @@ jobs:
         name: Test neutral
         conclusion: neutral
         output: |
-          {"summary":"Daz summary", "text_description":"Here is a bunch of text\nAnother line\nLine *with* _markdown_"}
+          {"summary":"[Build Scan URL: https://ge.gradle.org](https://ge.gradle.org)", "text_description":"Here is a bunch of text\nAnother line\nLine *with* _markdown_"}
