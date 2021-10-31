@@ -37,8 +37,6 @@ jobs:
           output: | # The | is significant!
             title: Test check run title
             summary: A summary of the test check run
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   # checks-action:
   #   runs-on: ubuntu-latest
