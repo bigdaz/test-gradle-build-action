@@ -25,7 +25,7 @@ jobs:
           -H "Authorization: Bearer $GITHUB_TOKEN" \
           -H "Accept: application/vnd.github.v3+json" \
           https://api.github.com/repos/bigdaz/test-gradle-command-action/check-runs \
-          -d '{"name":"XXXX", "head_sha": "${{github.sha}}","status":"completed","conclusion":"neutral","output":{"title":"Custom title","summary":"Custom summary","annotations":[{"path":"README.md","start_line":1,"end_line":2,"annotation_level":"warning","message":"The messsage *with* _markdown_","title":"The title _with_ *markdown*","raw_details":"The raw details"}]}}'
+          -d '{"name":"XXXX", "head_sha": "${{github.sha}}","status":"completed","conclusion":"neutral","output":{"title":"Custom title","summary":"Custom summary","annotations":[{"path":"README.md","start_line":1,"end_line":2,"annotation_level":"warning","message":"The messsage <a href='https://ge.gradle.org'>with link</a>","title":"The title _with_ *markdown*","raw_details":"The raw details"}]}}'
 
   # checks-action:
   #   runs-on: ubuntu-latest
