@@ -1,4 +1,4 @@
-name: output file contents
+name: Test warnings
 on:
   push:
     branches:
