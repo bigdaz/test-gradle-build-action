@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Echo warning
-      run: echo "::warning file=gradle-project/settings.gradle,line=3,col=10,endColumn=15::Missing semicolon"
+      run: echo "::warning title=DAZ,file=gradle-project/settings.gradle,line=3::Missing semicolon"
 
   
