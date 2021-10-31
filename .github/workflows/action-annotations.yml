@@ -1,0 +1,15 @@
+name: output file contents
+on:
+  push:
+    branches:
+      - action-annotations
+  workflow_dispatch:
+
+jobs:
+  seed-build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Echo warning
+      run: echo "::warning file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
+
+  
