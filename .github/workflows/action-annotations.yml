@@ -20,6 +20,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         name: Test neutral
-        status: completed
+        conclusion: neutral
+        details_url: https://ge.junit.org/s/72twc3w3cvfiw
 
   
