@@ -31,5 +31,5 @@ jobs:
         output: |
           {"summary":"[Build Scan URL: https://ge.gradle.org](https://ge.gradle.org)", "text_description":"Here is a bunch of text\nAnother line\nLine *with* _markdown_"}
         annotations: |
-          [{"path":"README.md","start_line":"1","end_line":"2","annotation_level":"warning","title":"Custom annotation","message":"This is my custom annotation"}]
+          [{"path":".github/workflows/action-annotations.yml","start_line":"1","end_line":"2","annotation_level":"warning","title":"Custom annotation","message":"This is my custom annotation"}]
 
