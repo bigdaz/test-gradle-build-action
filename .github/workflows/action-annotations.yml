@@ -31,11 +31,9 @@ jobs:
       - uses: octokit/request-action@v2.x
         id: create_check_run
         with:
-          route: POST /repos/{owner}/{repo}/check-runs
-          owner: bigdaz
-          repo: test-gradle-command-action
-          name: "Test check run"
+          route: POST /repos/${{github.repository}}/check-runs
           head_sha: ${{ github.sha }}
+          name: "Test check run"
           output: | # The | is significant!
             title: Test check run title
             summary: A summary of the test check run
