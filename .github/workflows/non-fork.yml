@@ -1,8 +1,7 @@
 # Change to workflow.
 name: non-fork
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
 
 env:
    SECRET_PRESENT: ${{ secrets.DUMMY_SECRET_2 }}
