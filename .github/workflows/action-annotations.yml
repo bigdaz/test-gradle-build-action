@@ -6,11 +6,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  seed-build:
+  checks-action:
     runs-on: ubuntu-latest
     steps:
-    - name: Echo warning
-      run: echo "::warning::Try some **markdown** _foo_"
     - uses: LouisBrunner/checks-action@v1.1.1
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -33,3 +31,18 @@ jobs:
         annotations: |
           [{"path":".github/workflows/action-annotations.yml","start_line":"1","end_line":"2","annotation_level":"warning","title":"Custom annotation","message":"This is my custom annotation"}]
 
+
+  checks-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create status check
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BUILD_COMMIT: ${{ github.sha }}
+        run: |
+          curl \
+          -X POST \
+          -H "Authorization: Bearer $GITHUB_TOKEN" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/bigdaz/test-gradle-command-action/check-runs \
+          -d '{"name":"dummy check", "head_sha": "${{github.sha}}"}'
