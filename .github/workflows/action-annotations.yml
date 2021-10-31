@@ -10,6 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Echo warning
-      run: echo "::error title=DAZ,file=README.md::Missing semicolon"
+      run: echo "::error file=README.md::Missing semicolon"
 
   
