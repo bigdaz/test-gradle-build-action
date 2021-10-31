@@ -20,6 +20,6 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         name: Test neutral
-        conclusion: neutral
+        status: completed
 
   
