@@ -23,3 +23,11 @@ jobs:
         conclusion: neutral
         output: |
           {"summary":"[Build Scan URL: https://ge.gradle.org](https://ge.gradle.org)", "text_description":"Here is a bunch of text\nAnother line\nLine *with* _markdown_"}
+    - uses: LouisBrunner/checks-action@v1.1.1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        name: Test with details url
+        conclusion: neutral
+        details_url: https://ge.gradle.org
+        output: |
+          {"summary":"[Build Scan URL: https://ge.gradle.org](https://ge.gradle.org)", "text_description":"Here is a bunch of text\nAnother line\nLine *with* _markdown_"}
