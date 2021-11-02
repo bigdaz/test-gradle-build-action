@@ -1,7 +1,7 @@
 #Comment
 name: CCUD test
 
-on: [push]
+on: [push,pull_request]
 
 jobs:
   build:
@@ -10,13 +10,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Checkout CCUD
-        uses: actions/checkout@v2
-        with:
-          repository: gradle/gradle-enterprise-build-config-samples
-          path: gradle-enterprise-build-config-samples
-          ref: dd/github-actions-links
-          
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
