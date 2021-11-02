@@ -22,7 +22,7 @@ jobs:
           arguments: help
           build-root-directory: gradle-project
         env:
-          GRADLE_ENTERPRISE_ACCESS_KEY: e.grdev.net=${{secrets.GRADLE_ENTERPRISE_ACCESS_KEY}}
+          GRADLE_ENTERPRISE_ACCESS_KEY: ${{secrets.GRADLE_ENTERPRISE_ACCESS_KEY}}
 
       - name: list build scan data
         run: ls -la ~/.gradle/build-scan-data
