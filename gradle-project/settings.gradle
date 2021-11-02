@@ -6,7 +6,7 @@ plugins {
 gradleEnterprise {
     server = "https://e.grdev.net"
     buildScan {
-        publishAlways()
+        publishIfAuthenticated()
         captureTaskInputFiles = true
     }
 }
