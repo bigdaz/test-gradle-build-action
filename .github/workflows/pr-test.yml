@@ -26,3 +26,8 @@ jobs:
 
       - name: list build scan data
         run: ls -la ~/.gradle/build-scan-data
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build-scan-data
+          path: ~/.gradle/build-scan-data
