@@ -21,17 +21,10 @@ jobs:
         with: 
           arguments: help
           build-root-directory: gradle-project
-        env:
-          GRADLE_ENTERPRISE_ACCESS_KEY: ${{secrets.GRADLE_ENTERPRISE_ACCESS_KEY}}
 
       - uses: actions/upload-artifact@v2
         with:
           name: build-scan-data
-          path: ~/.gradle/build-scan-data
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: build-scan-data-1
           path: ~/.gradle/build-scan-data
 
       - name: gradle assemble
@@ -39,17 +32,10 @@ jobs:
         with: 
           arguments: assemble
           build-root-directory: gradle-project
-        env:
-          GRADLE_ENTERPRISE_ACCESS_KEY: ${{secrets.GRADLE_ENTERPRISE_ACCESS_KEY}}
 
       - uses: actions/upload-artifact@v2
         with:
           name: build-scan-data
-          path: ~/.gradle/build-scan-data
-  
-      - uses: actions/upload-artifact@v2
-        with:
-          name: build-scan-data-2
           path: ~/.gradle/build-scan-data
 
   report:
@@ -58,8 +44,16 @@ jobs:
     steps:
     - uses: actions/download-artifact@v2
       with:
-        path: path/to/artifacts
+        path: ~/.gradle
         
     - name: Display structure of downloaded files
       run: ls -R
-      working-directory: path/to/artifacts
+      working-directory: ~/.gradle
+
+    # - name: gradle assemble
+    #   uses: gradle/gradle-build-action@v2
+    #   with: 
+    #   arguments: assemble
+    #     build-root-directory: gradle-project
+    #   env:
+    #     GRADLE_ENTERPRISE_ACCESS_KEY: ${{secrets.GRADLE_ENTERPRISE_ACCESS_KEY}}
