@@ -45,15 +45,11 @@ jobs:
     - uses: actions/download-artifact@v2
       with:
         path: ~/.gradle
-        
-    - name: Display structure of downloaded files
-      run: ls -R
-      working-directory: ~/.gradle
 
-    # - name: gradle assemble
-    #   uses: gradle/gradle-build-action@v2
-    #   with: 
-    #   arguments: assemble
-    #     build-root-directory: gradle-project
-    #   env:
-    #     GRADLE_ENTERPRISE_ACCESS_KEY: ${{secrets.GRADLE_ENTERPRISE_ACCESS_KEY}}
+    - name: gradle assemble
+      uses: gradle/gradle-build-action@v2
+      with: 
+      arguments: buildScanPublishPrevious
+        build-root-directory: gradle-project
+      env:
+        GRADLE_ENTERPRISE_ACCESS_KEY: ${{secrets.GRADLE_ENTERPRISE_ACCESS_KEY}}
