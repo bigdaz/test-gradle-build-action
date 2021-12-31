@@ -19,6 +19,7 @@ jobs:
         java-version: 11
     - name: run gradle
       uses: gradle/gradle-build-action@v2
+      with:
         build-root-directory: gradle-project
         arguments: |
           check
