@@ -13,6 +13,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
+    - name: print env
+      run: env
     - name: run gradle
       working-directory: gradle-project
       run: gradle javaToolchains
