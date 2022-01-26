@@ -1,0 +1,15 @@
+name: Java Toolchains
+on:
+  push:
+
+env:
+  CACHE_DEBUG_ENABLED: true
+
+jobs:
+  seed-build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: run gradle
+      working-directory: gradle-project
+      run: gradle javaToolchains
