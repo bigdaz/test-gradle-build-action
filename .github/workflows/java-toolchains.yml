@@ -24,4 +24,4 @@ jobs:
       run: env | grep ANDROID | sort
     - name: run gradle
       working-directory: gradle-project
-      run: gradle -Porg.gradle.java.installations.fromEnv=JAVA_HOME_17_X64,JAVA_HOME_13_X64 javaToolchains
+      run: gradle javaToolchains
