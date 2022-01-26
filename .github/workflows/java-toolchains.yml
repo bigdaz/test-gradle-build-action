@@ -17,10 +17,18 @@ jobs:
       run: env | grep JAVA | sort
     - name: print ANDROID env
       run: env | grep ANDROID | sort
+    - name: "Set environment variables"
+      shell: bash
+      run: |
+        set -x
+        echo "ANDROID_NDK_HOME=$ANDROID_NDK_LATEST_HOME" >> $GITHUB_ENV
+        echo "ANDROID_NDK_ROOT=$ANDROID_NDK_LATEST_HOME" >> $GITHUB_ENV
+    - name: print ANDROID env again
+      run: env | grep ANDROID | sort
     - name: print modified ANDROID env
       env:
-        ANDROID_NDK_HOME: ${{ env.ANDROID_NDK_LATEST_HOME }}
-        ANDROID_NDK_ROOT: ${{ env.ANDROID_NDK_LATEST_HOME }}
+        ANDROID_NDK_HOME: foo_$ANDROID_NDK_LATEST_HOME
+        ANDROID_NDK_ROOT: bar_$ANDROID_NDK_LATEST_HOME
       run: env | grep ANDROID | sort
     - name: run gradle
       working-directory: gradle-project
