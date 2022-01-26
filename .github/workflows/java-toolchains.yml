@@ -6,8 +6,11 @@ env:
   CACHE_DEBUG_ENABLED: true
 
 jobs:
-  seed-build:
-    runs-on: ubuntu-latest
+  report-toolchains:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2
     - name: run gradle
