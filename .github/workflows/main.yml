@@ -13,7 +13,7 @@ jobs:
     - name: Write initial summary
       run: echo '### Hello world!' >> $GITHUB_STEP_SUMMARY
     - name: Setup gradle
-      uses: gradle/gradle-build-action@v2
+      uses: gradle/gradle-build-action@hackathon
     - name: Print current dir
       run: pwd
     - name: Run build
