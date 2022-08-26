@@ -1,15 +1,20 @@
 name: Experiment
 on: 
-  schedule:
-  - cron: '*/5 * * * *'
+  workflow_dispatch:
 
 jobs:
   job1:
     name: Debug
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Git checkout
       uses: actions/checkout@v2
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v2
     - name: List files
-      run: ls
+      run: ls -la
+    - name: List files with WSL
+      run: wsl ls -la
+    - name: What's home?
+      run: echo $HOME
