@@ -24,6 +24,6 @@ jobs:
       if: ${{ always() }}
       run: |
         C:\Program` Files\Git\usr\bin\find.exe C:\Users\runneradmin\.gradle
-        C:\Program` Files\Git\usr\bin\find.exe C:\Users\runneradmin\.gradle -name *
+        C:\Program` Files\Git\usr\bin\find.exe C:\Users\runneradmin\.gradle -name "*.properties"
 
         
