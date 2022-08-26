@@ -15,6 +15,6 @@ jobs:
 #     - name: List files
 #       run: ls -la
     - name: List files with find
-      run: find C:\Users\runneradmin\.gradle -name *
+      run: where.exe find.exe
     - name: What's home?
       run: echo $HOME
