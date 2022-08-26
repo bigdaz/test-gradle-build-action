@@ -32,6 +32,10 @@ jobs:
       if: ${{ always() }}
       run: |
         C:\Program` Files\Git\usr\bin\find.exe C:\Users\runneradmin\.gradle -name "*.properties" -exec "C:\Program` Files\Git\usr\bin\touch.exe -m" {} +
+    - name: Try touch directly
+      if: ${{ always() }}
+      run: |
+        C:\Program` Files\Git\usr\bin\touch.exe -m C:\Users\runneradmin\.gradle\caches\journal-1\file-access.properties
     - name: Report timestamp after
       if: ${{ always() }}
       run: C:\Program` Files\Git\usr\bin\ls.exe -l C:\Users\runneradmin\.gradle\caches\journal-1
