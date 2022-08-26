@@ -15,7 +15,10 @@ jobs:
       uses: gradle/gradle-build-action@v2
 #     - name: List files
 #       run: ls -la
-    - name: List files with find
-      run: where.exe find.exe
+    - name: Find find and touch
+      run: |
+        where.exe find.exe
+        where.exe find
+        where.exe touch
     - name: What's home?
       run: echo $HOME
