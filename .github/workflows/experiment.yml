@@ -20,9 +20,6 @@ jobs:
         where.exe find.exe
         where.exe find
         where.exe touch
-    - name: Run find
-      if: ${{ always() }}
-      run: find /?
     - name: Run git find
       if: ${{ always() }}
-      run: C:\Program` Files\Git\usr\bin\find.exe
+      run: C:\Program` Files\Git\usr\bin\find.exe C:\Users\runneradmin\.gradle --name "gc.properties"
