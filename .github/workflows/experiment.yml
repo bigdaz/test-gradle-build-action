@@ -22,4 +22,4 @@ jobs:
         where.exe touch
     - name: Run git find
       if: ${{ always() }}
-      run: C:\Program` Files\Git\usr\bin\find.exe C:\Users\runneradmin\.gradle --name "gc.properties"
+      run: C:\Program` Files\Git\usr\bin\find.exe C:\Users\runneradmin\.gradle -name "gc.properties"
