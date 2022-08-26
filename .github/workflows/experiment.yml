@@ -14,7 +14,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
 #     - name: List files
 #       run: ls -la
-    - name: List files with WSL
-      run: wsl ls -la
+    - name: List files with find
+      run: find C:\Users\runneradmin\.gradle -name *
     - name: What's home?
       run: echo $HOME
