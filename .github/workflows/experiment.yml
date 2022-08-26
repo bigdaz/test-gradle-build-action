@@ -26,12 +26,14 @@ jobs:
         C:\Program` Files\Git\usr\bin\find.exe C:\Users\runneradmin\.gradle
         C:\Program` Files\Git\usr\bin\find.exe C:\Users\runneradmin\.gradle -name "*.properties"
     - name: Report timestamp before
-      run: C:\Program Files\Git\usr\bin\ls.exe -l C:\Users\runneradmin\.gradle\caches\journal-1
+      if: ${{ always() }}
+      run: C:\Program` Files\Git\usr\bin\ls.exe -l C:\Users\runneradmin\.gradle\caches\journal-1
     - name: Run git find with exec touch
       if: ${{ always() }}
       run: |
-        C:\Program` Files\Git\usr\bin\find.exe C:\Users\runneradmin\.gradle -name "*.properties" -exec "C:\Program Files\Git\usr\bin\touch.exe -m" {} +
+        C:\Program` Files\Git\usr\bin\find.exe C:\Users\runneradmin\.gradle -name "*.properties" -exec "C:\Program` Files\Git\usr\bin\touch.exe -m" {} +
     - name: Report timestamp after
-      run: C:\Program Files\Git\usr\bin\ls.exe -l C:\Users\runneradmin\.gradle\caches\journal-1
+      if: ${{ always() }}
+      run: C:\Program` Files\Git\usr\bin\ls.exe -l C:\Users\runneradmin\.gradle\caches\journal-1
 
         
