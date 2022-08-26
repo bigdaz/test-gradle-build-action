@@ -22,7 +22,7 @@ jobs:
         where.exe touch
     - name: Run find
       if: ${{ always() }}
-      run: find
+      run: find /?
     - name: Run git find
       if: ${{ always() }}
-      run: C:\Program Files\Git\usr\bin\find.exe
+      run: C:\Program` Files\Git\usr\bin\find.exe
