@@ -20,5 +20,9 @@ jobs:
         where.exe find.exe
         where.exe find
         where.exe touch
-    - name: What's home?
-      run: echo $HOME
+    - name: Run find
+      if: ${{ always() }}
+      run: find
+    - name: Run git find
+      if: ${{ always() }}
+      run: C:\Program Files\Git\usr\bin\find.exe
