@@ -16,9 +16,7 @@ jobs:
         distribution: temurin
         java-version: 11
     - name: Setup gradle
-      uses: gradle/gradle-build-action@dd/no-duplicate-build-results
-    - name: Run build twice
+      uses: gradle/gradle-build-action@v2
+    - name: Run gradle build
       working-directory: gradle-project
-      run: |
-        ./gradlew assemble --configuration-cache
-        ./gradlew assemble --configuration-cache
+      run: ./gradlew assemble
