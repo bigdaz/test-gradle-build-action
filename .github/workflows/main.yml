@@ -21,4 +21,4 @@ jobs:
         cache-read-only: false
     - name: Run gradle build
       working-directory: gradle-project
-      run: ./gradlew assemble
+      run: ./gradlew assemble --configuration-cache
