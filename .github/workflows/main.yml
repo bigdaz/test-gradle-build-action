@@ -5,6 +5,7 @@ on:
 
 env:
   GRADLE_BUILD_ACTION_CACHE_DEBUG_ENABLED: true
+  GRADLE_BUILD_ACTION_CACHE_KEY_PREFIX: "changed-"
 
 jobs:
   seed-build:
