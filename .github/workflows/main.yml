@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 env:
-  CACHE_DEBUG_ENABLED: true
+  GRADLE_BUILD_ACTION_CACHE_DEBUG_ENABLED: true
 
 jobs:
   seed-build:
