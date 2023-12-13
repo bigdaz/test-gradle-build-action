@@ -19,6 +19,10 @@ jobs:
       uses: gradle/gradle-build-action@prerelease/v3
       with:
         cache-read-only: false
-    - name: Run gradle build
+        gradle-version: 8.4
+    - name: Run gradle wrapper build
       working-directory: gradle-project
       run: ./gradlew assemble --configuration-cache
+    - name: Run gradle 8.4 build
+      working-directory: gradle-project
+      run: gradle assemble --configuration-cache
