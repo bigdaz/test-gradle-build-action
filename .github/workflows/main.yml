@@ -17,6 +17,8 @@ jobs:
         java-version: 11
     - name: Setup gradle
       uses: gradle/gradle-build-action@prerelease/v3
+      with:
+        cache-read-only: false
     - name: Run gradle build
       working-directory: gradle-project
       run: ./gradlew assemble
