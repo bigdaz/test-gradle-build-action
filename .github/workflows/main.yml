@@ -5,7 +5,8 @@ on:
 
 env:
   GRADLE_BUILD_ACTION_CACHE_DEBUG_ENABLED: true
-  GRADLE_BUILD_ACTION_CACHE_KEY_PREFIX: "11-"
+  GRADLE_BUILD_ACTION_CACHE_KEY_PREFIX: "12-"
+  GRADLE_ENCRYPTION_KEY: foo
 
 jobs:
   seed-build:
@@ -23,6 +24,6 @@ jobs:
     - name: Run gradle wrapper build
       working-directory: gradle-project
       run: ./gradlew assemble --configuration-cache
-    - name: Run gradle 8.4 build
+    - name: Run gradle 8.5 build
       working-directory: gradle-project
       run: gradle assemble --configuration-cache
