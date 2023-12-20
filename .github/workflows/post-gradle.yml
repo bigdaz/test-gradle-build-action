@@ -2,7 +2,7 @@
 name: post-gradle
 on:
   workflow_run:
-    workflows: ["main"]
+    workflows: ["dependency-graph"]
     types: [completed]
 
 jobs:

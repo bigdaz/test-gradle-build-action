@@ -22,4 +22,4 @@ jobs:
         cache-write-only: true
     - name: Run gradle build
       working-directory: gradle-project
-      run: ./gradlew foobar
+      run: ./gradlew assemble

@@ -2,7 +2,6 @@
 name: dependency-graph
 on:
   workflow_dispatch:
-  push:
 
 env:
   CACHE_DEBUG_ENABLED: true
