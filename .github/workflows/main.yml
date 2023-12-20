@@ -18,8 +18,6 @@ jobs:
         java-version: 11
     - name: Setup gradle
       uses: gradle/gradle-build-action@v2
-      with:
-        cache-write-only: true
     - name: Run gradle build
       working-directory: gradle-project
-      run: ./gradlew assemble
+      run: ./gradlew assemble --offline
