@@ -19,7 +19,7 @@ jobs:
     - name: Setup gradle
       uses: gradle/gradle-build-action@v2
       with:
-        cache-write-only: false
+        cache-write-only: true
     - name: Run gradle build
       working-directory: gradle-project
-      run: ./gradlew assemble --offline
+      run: ./gradlew help
