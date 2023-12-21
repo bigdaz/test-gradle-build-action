@@ -6,6 +6,7 @@ on:
 
 env:
   GRADLE_BUILD_ACTION_CACHE_DEBUG_ENABLED: true
+  GRADLE_ENCRYPTION_KEY: 725914FC8298FBF43D96D79x
 
 jobs:
   config-cache-build:
@@ -20,4 +21,4 @@ jobs:
       uses: gradle/gradle-build-action@prerelease/v3
     - name: Run gradle build
       working-directory: gradle-project
-      run: ./gradlew assemble --configuration-cache -Dorg.gradle.configuration-cache.internal.encryption=false
+      run: ./gradlew assemble --configuration-cache
