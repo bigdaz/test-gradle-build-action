@@ -8,7 +8,7 @@ env:
   GRADLE_BUILD_ACTION_CACHE_DEBUG_ENABLED: true
 
 jobs:
-  config-cache-build:
+  gradle-86-build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -19,7 +19,41 @@ jobs:
     - name: Setup gradle
       uses: gradle/gradle-build-action@prerelease/v3
       with:
-        cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+        # cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
     - name: Run gradle build
       working-directory: gradle-project
-      run: ./gradlew assemble --configuration-cache
+      run: ./gradlew assemble
+
+  gradle-85-build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 11
+    - name: Setup gradle
+      uses: gradle/gradle-build-action@prerelease/v3
+      with:
+        gradle-version: 8.5
+        # cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+    - name: Run gradle build
+      working-directory: gradle-project
+      run: gradle assemble
+
+  gradle-80-build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 11
+    - name: Setup gradle
+      uses: gradle/gradle-build-action@prerelease/v3
+      with:
+        gradle-version: 8.0
+        # cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+    - name: Run gradle build
+      working-directory: gradle-project
+      run: gradle assemble
