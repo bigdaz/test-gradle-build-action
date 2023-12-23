@@ -22,7 +22,7 @@ jobs:
       #   cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
     - name: Run gradle build
       working-directory: gradle-project
-      run: ./gradlew assemble
+      run: ./gradlew assemble --configuration-cache
 
   gradle-85-build:
     runs-on: ubuntu-latest
@@ -39,7 +39,7 @@ jobs:
         # cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
     - name: Run gradle build
       working-directory: gradle-project
-      run: gradle assemble
+      run: gradle assemble --configuration-cache
 
   gradle-80-build:
     runs-on: ubuntu-latest
@@ -56,4 +56,4 @@ jobs:
         # cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
     - name: Run gradle build
       working-directory: gradle-project
-      run: gradle assemble
+      run: gradle assemble --configuration-cache
