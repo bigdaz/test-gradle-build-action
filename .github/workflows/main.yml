@@ -18,11 +18,11 @@ jobs:
         java-version: 11
     - name: Setup gradle
       uses: gradle/gradle-build-action@prerelease/v3
-      # with:
-      #   cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+      with:
+        cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
     - name: Run gradle build
       working-directory: gradle-project
-      run: ./gradlew assemble
+      run: ./gradlew assemble --configuration-cache
 
   gradle-85-build:
     runs-on: ubuntu-latest
