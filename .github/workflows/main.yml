@@ -18,11 +18,11 @@ jobs:
         java-version: 11
     - name: Setup gradle
       uses: gradle/gradle-build-action@prerelease/v3
-      with:
-        cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+      # with:
+      #   cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
     - name: Run gradle build
       working-directory: gradle-project
-      run: ./gradlew assemble --configuration-cache
+      run: ./gradlew assemble
 
   gradle-85-build:
     runs-on: ubuntu-latest
@@ -36,10 +36,10 @@ jobs:
       uses: gradle/gradle-build-action@prerelease/v3
       with:
         gradle-version: 8.5
-        cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+        # cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
     - name: Run gradle build
       working-directory: gradle-project
-      run: gradle assemble --configuration-cache
+      run: gradle assemble
 
   gradle-80-build:
     runs-on: ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
       uses: gradle/gradle-build-action@prerelease/v3
       with:
         gradle-version: 8.0.2
-        cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
+        # cache-encryption-key: ${{ secrets.GRADLE_ENCRYPTION_KEY }}
     - name: Run gradle build
       working-directory: gradle-project
-      run: gradle assemble --configuration-cache
+      run: gradle assemble
